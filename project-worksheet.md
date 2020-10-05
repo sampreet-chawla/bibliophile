@@ -166,36 +166,34 @@ Based on the initial logic defined in the previous sections try and breakdown th
 
 ### MVP
 
-| Label | Activity                                         | Priority | Estimated Time | Time Invested  | Actual Time |
-| ----- | ------------------------------------------------ | :------: | :------------: | :------------: | :---------: |
-| A     | Find API urls for project                        |    H     |      2hrs      |      hrs       |     hrs     |
-| B     | Create Stateless Components with Router          |    H     |      3hrs      |      hrs       |     hrs     |
-| C     | Create Stateful Components - (Browse)            |    H     |      4hrs      |      hrs       |     hrs     |
-| D     | Create Stateful Components - Show Item, Sidebar  |    H     |      3hrs      |      hrs       |     hrs     |
-| E     | Create Stateful Components - My Wishlist         |    H     |      3hrs      |      hrs       |     hrs     |
-| F     | Integrate with GB-API (fetch and show items)     |    H     |      2hrs      |      hrs       |     hrs     |
-| G     | Integrate with NYT Books API - Best Selling      |    H     |      2hrs      |      hrs       |     hrs     |
-| H     | Create Resource Component                        |    H     |      2hrs      |      hrs       |     hrs     |
-| I     | Make own Logo, Icons and Mock Image              |    M     |     1.5hrs     |      hrs       |     hrs     |
-| J     | Create Resource Component                        |    H     |      2hrs      |      hrs       |     hrs     |
-| K     | Basic Nav Nar Functionality                      |    H     |      2hrs      |      hrs       |     hrs     |
-| L     | Mobile First layout using CSS Grid/ Flex / SCSS  |    H     |      3hrs      |      hrs       |     hrs     |
-| M     | responsive Design                                |    H     |      4hrs      |      hrs       |     hrs     |
-| ----- | ------------------------------------------------ | :------: | :------------: | :------------: | :---------: |
-|       | Total                                            |          |    32.5hrs     |      hrs       |     hrs     |
+| Label | Activity                                        | Priority | Estimated Time | Time Invested | Actual Time |
+| ----- | ----------------------------------------------- | :------: | :------------: | :-----------: | :---------: |
+| A     | Find API urls for project                       |    H     |      2hrs      |      hrs      |     hrs     |
+| B     | Create Stateless Components with Router         |    H     |      3hrs      |      hrs      |     hrs     |
+| C     | Create Stateful Components - (Browse)           |    H     |      4hrs      |      hrs      |     hrs     |
+| D     | Create Stateful Components - Show Item, Sidebar |    H     |      3hrs      |      hrs      |     hrs     |
+| E     | Create Stateful Components - My Wishlist        |    H     |      3hrs      |      hrs      |     hrs     |
+| F     | Integrate with GB-API (fetch and show items)    |    H     |      2hrs      |      hrs      |     hrs     |
+| G     | Integrate with NYT Books API - Best Selling     |    H     |      2hrs      |      hrs      |     hrs     |
+| H     | Create Resource Component                       |    H     |      2hrs      |      hrs      |     hrs     |
+| I     | Make own Logo, Icons and Mock Image             |    M     |     1.5hrs     |      hrs      |     hrs     |
+| J     | Create Resource Component                       |    H     |      2hrs      |      hrs      |     hrs     |
+| K     | Basic Nav Nar Functionality                     |    H     |      2hrs      |      hrs      |     hrs     |
+| L     | Mobile First layout using CSS Grid/ Flex / SCSS |    H     |      3hrs      |      hrs      |     hrs     |
+| M     | responsive Design                               |    H     |      4hrs      |      hrs      |     hrs     |
+|       | **Total**                                       |          |  **32.5hrs**   |      hrs      |     hrs     |
 
 ### PostMVP
 
-| Label | Activity                                         | Priority | Estimated Time | Time Invested  | Actual Time |
-| ----- | ------------------------------------------------ | :------: | :------------: | :------------: | :---------: |
-| A     | Include Blog of Project Journey                  |    H     |      3hrs      |      hrs       |     hrs     |
-| B     | Show items from same author                      |    M     |      3hrs      |      hrs       |     hrs     |
-| C     | Sass Integration                                 |    H     |      4hrs      |      hrs       |     hrs     |
-| D     | Dark Theme and Light Theme                       |    H     |      3hrs      |      hrs       |     hrs     |
-| E     | Remove from Wishlist                             |    M     |      2hrs      |      hrs       |     hrs     |
-| F     | Code Cleanup and conformance to best practices   |    H     |      3hrs      |      hrs       |     hrs     |
-| ----- | ------------------------------------------------ | :------: | :------------: | :------------: | :---------: |
-|       | Total                                            |          |     18hrs      |      hrs       |     hrs     |
+| Label | Activity                                       | Priority | Estimated Time | Time Invested | Actual Time |
+| ----- | ---------------------------------------------- | :------: | :------------: | :-----------: | :---------: |
+| A     | Include Blog of Project Journey                |    H     |      3hrs      |      hrs      |     hrs     |
+| B     | Show items from same author                    |    M     |      3hrs      |      hrs      |     hrs     |
+| C     | Sass Integration                               |    H     |      4hrs      |      hrs      |     hrs     |
+| D     | Dark Theme and Light Theme                     |    H     |      3hrs      |      hrs      |     hrs     |
+| E     | Remove from Wishlist                           |    M     |      2hrs      |      hrs      |     hrs     |
+| F     | Code Cleanup and conformance to best practices |    H     |      3hrs      |      hrs      |     hrs     |
+|       | **Total**                                      |          |   **18hrs**    |      hrs      |     hrs     |
 
 ## Additional Libraries - TBD
 
