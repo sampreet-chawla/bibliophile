@@ -113,7 +113,7 @@ Wireframes are created using [MockFlow](https://mockflow.com/) and Architecture 
 
 The project will be built on React Components and will make use of Props, and React hooks like useState, useEffect, useContext, for state management. There would be lifting of state while handling search criteria and selecting items.
 
-- [React Architecture Diagram](https://res.cloudinary.com/dreamer123/image/upload/v1601914163/Sampreet-SEIR-831-unit2/Bibiophile_React_Architecture_Diagram_nv6trr.png)
+- [React Architecture Diagram](https://res.cloudinary.com/dreamer123/image/upload/v1601916957/Sampreet-SEIR-831-unit2/Bibiophile_React_Architecture_Diagram_vyyisz.png)
 
 ### MVP/PostMVP
 
@@ -214,6 +214,7 @@ function reverse(string) {
 - Current search implementation would be for books
 - Best Selling list would be supported for hard-cover fiction books.
 - Search results maybe restricted to 10-40 pages at a time.
+- New Releases would refer to mock images as there is API supported for it.
 
 ## Future Releases
 
