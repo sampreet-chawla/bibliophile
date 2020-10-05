@@ -20,8 +20,9 @@ Bibliophile is an upcoming "Book Browsing" project to help current and emerging 
 
 1. API sample from [Google Books API](https://developers.google.com/books) :
 
-Here, the API performs a search with the term 'quilting'
-https://www.googleapis.com/books/v1/volumes?q=quilting
+#### Here, the API performs a search with the term 'quilting'
+
+#### https://www.googleapis.com/books/v1/volumes?q=quilting
 
 ```
 {
@@ -51,8 +52,9 @@ https://www.googleapis.com/books/v1/volumes?q=quilting
 
 2. API sample from [New York Times Book API](https://developer.nytimes.com/docs/books-product/1/overview)
 
-This API gets the Top 15 Best Sellers list. If no date is provided returns the latest list. By default, it fetches the best seller list for hard-cover fiction books.
-https://api.nytimes.com/svc/books/v3/lists.json?list-name=hardcover-fiction&api-key=<API_KEY>
+#### This API gets the Top 15 Best Sellers list. If no date is provided returns the latest list. By default, it fetches the best seller list for hard-cover fiction books.
+
+#### https://api.nytimes.com/svc/books/v3/lists.json?list-name=hardcover-fiction&api-key=<API_KEY>
 
 ```
   {
@@ -180,23 +182,26 @@ Based on the initial logic defined in the previous sections try and breakdown th
 | L     | Mobile First layout using CSS Grid/ Flex / SCSS  |    H     |      3hrs      |      hrs       |     hrs     |
 | M     | responsive Design                                |    H     |      4hrs      |      hrs       |     hrs     |
 | ----- | ------------------------------------------------ | :------: | :------------: | :------------: | :---------: |
-| Total | H                                                | 32.5hrs  |      hrs       |      hrs       |
+|       | Total                                            |          |    32.5hrs     |      hrs       |     hrs     |
 
 ### PostMVP
 
-- Add Embedded viewer (free items)
-- Include Blog of Project Journey
-- Show items from same author
-- Complete Sass Integration (if not used)
-- Gatsby Integration
-- Dark Theme and Light Theme
-- Code Cleanup and conformance to best practices
+| Label | Activity                                         | Priority | Estimated Time | Time Invested  | Actual Time |
+| ----- | ------------------------------------------------ | :------: | :------------: | :------------: | :---------: |
+| A     | Include Blog of Project Journey                  |    H     |      3hrs      |      hrs       |     hrs     |
+| B     | Show items from same author                      |    M     |      3hrs      |      hrs       |     hrs     |
+| C     | Sass Integration                                 |    H     |      4hrs      |      hrs       |     hrs     |
+| D     | Dark Theme and Light Theme                       |    H     |      3hrs      |      hrs       |     hrs     |
+| E     | Remove from Wishlist                             |    M     |      2hrs      |      hrs       |     hrs     |
+| F     | Code Cleanup and conformance to best practices   |    H     |      3hrs      |      hrs       |     hrs     |
+| ----- | ------------------------------------------------ | :------: | :------------: | :------------: | :---------: |
+|       | Total                                            |          |     18hrs      |      hrs       |     hrs     |
 
 ## Additional Libraries - TBD
 
 Use this section to list all supporting libraries and their role in the project such as Axios, ReactStrap, D3, etc.
 
-## Code Snippet
+## Code Snippet - TBD
 
 Use this section to include a brief code snippet of functionality that you are proud of an a brief description. Code snippet should not be greater than 10 lines of code.
 
@@ -205,3 +210,14 @@ function reverse(string) {
 	// here is the code to reverse a string of text
 }
 ```
+
+## Limitations
+
+- Current search implementation would be for books
+- Best Selling list would be supported for hard-cover fiction books.
+- Search results maybe restricted to 10-40 pages at a time.
+
+## Future Releases
+
+- Refactor in Gatsby
+- Include search for magazines
