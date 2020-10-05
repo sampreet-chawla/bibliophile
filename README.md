@@ -1,5 +1,7 @@
 # bibliophile
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/966fc1fe-9b8d-4e02-a213-e53f3902fe90/deploy-status)](https://app.netlify.com/sites/bibliophile/deploys)
+
 Bibliophile is a Book Browsing project for Book Lovers, that will be created with HTML5, CSS3 and React 16.8 & above
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
