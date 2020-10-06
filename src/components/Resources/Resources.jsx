@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Resources = (props) => {
-	return <>Resources Component</>;
+	return <h3>Resources Component</h3>;
 };
 
 export default Resources;

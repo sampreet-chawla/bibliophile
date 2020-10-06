@@ -199,6 +199,18 @@ Based on the initial logic defined in the previous sections try and breakdown th
 
 Use this section to list all supporting libraries and their role in the project such as Axios, ReactStrap, D3, etc.
 
+- [react-icons](https://www.npmjs.com/package/react-icons) for [Font Awesome Icons](https://fontawesome.com/)
+
+## References
+
+- [Liyas Thomas's Book Website](https://liyasthomas.github.io/books/#search) developed in HTML, CSS and JavaScript. Referred the website for its look and feel. Also talked to Liyas Thomas for his choice of Google Books API, limitations and challenges for the project.
+- Article [Build a Best Sellers List with New York Times and Google Books API](https://www.freecodecamp.org/news/build-a-best-sellers-list-with-new-york-times-google-books-api-46201c30aec7/)
+
+## Challenges
+
+- [Importing functions from helpers] - Referred the [Stackflow link](https://stackoverflow.com/questions/38402025/how-to-create-helper-file-full-of-functions-in-react-native)
+- [A Simple JavaScript Technique for Filling Star Ratings] (https://webdesign.tutsplus.com/tutorials/a-simple-javascript-technique-for-filling-star-ratings--cms-29450)
+
 ## Code Snippet - TBD
 
 Use this section to include a brief code snippet of functionality that you are proud of an a brief description. Code snippet should not be greater than 10 lines of code.

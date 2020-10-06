@@ -1,0 +1,63 @@
+.nav-bar {
+	display: flex;
+	background: black;
+	color: white;
+}
+.nav-bar h1,
+.nav-bar.menu-item {
+	padding: 15px;
+	margin: 10px;
+	font-size: 15px;
+	font-weight: 400;
+	line-height: 1em;
+}
+/* .nav-bar.menu-item:hover {
+	text-decoration: underline;
+} */
+
+/*
+.navbar-brand {
+	font-size: 22px;
+	font-family: 'Nothing You Could Do', cursive;
+	font-weight: bolder;
+}
+
+.nav-item {
+	padding: 0 10px;
+	color: white;
+}
+
+.nav-item:hover {
+	text-decoration-line: underline;
+}
+
+.navbar-light .navbar-nav .nav-link {
+	color: rgba(0, 0, 0, 0.8);
+}
+
+a.nav-link {
+	font-size: 18px;
+	color: black;
+}
+
+.navbar,
+.navbar-expand-lg {
+	background-color: rgba(249, 229, 229, 100%);
+}
+
+nav.navbar.navbar-expand-lg.navbar-light {
+	position: sticky;
+	top: 0;
+	z-index: 1;
+}
+
+button:focus {
+	outline-color: black;
+}
+
+@media (min-width: 1024px) {
+	a.nav-link {
+		font-size: 20px;
+		color: black;
+	}
+} */
