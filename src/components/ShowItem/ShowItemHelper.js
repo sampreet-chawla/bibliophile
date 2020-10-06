@@ -5,15 +5,17 @@ import { FaStart, FaStarO, FaStarHalfO } from 'react-icons/fa';
 // Here, this function return an author string from an array of authors.
 export function convertAuthorsArrToStr(authorsArr) {
 	let authorStr = '';
-	if (authorsArr.length > 1) {
-		authorStr = authorsArr.reduce((authorsStr, author) =>
-			authorsStr.concat(author, ', ')
-		);
-		authorStr = authorStr.endsWith(', ')
-			? authorStr.substr(0, authorStr.lastIndexOf(', '))
-			: authorStr;
-	} else if (authorsArr.length === 1) {
-		authorStr = authorsArr[0];
+	if (authorsArr) {
+		if (authorsArr.length > 1) {
+			authorStr = authorsArr.reduce((authorsStr, author) =>
+				authorsStr.concat(author, ', ')
+			);
+			authorStr = authorStr.endsWith(', ')
+				? authorStr.substr(0, authorStr.lastIndexOf(', '))
+				: authorStr;
+		} else if (authorsArr.length === 1) {
+			authorStr = authorsArr[0];
+		}
 	} else {
 		authorStr = 'Unknown';
 	}

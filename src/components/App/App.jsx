@@ -14,6 +14,8 @@ import ShowItems from '../ShowItems/ShowItems';
 import MyWishlist from '../MyWishlist/MyWishlist';
 import Resources from '../Resources/Resources';
 
+export const appContext = React.createContext(null);
+
 function App() {
 	const [favItems, setFavItems] = useState([]);
 
@@ -52,9 +54,14 @@ function App() {
 		}
 	};
 
-	const handleSelectedItem = (favItem) => {
-		const favItemList = [...favItem];
-		favItemList.push(favItem);
+	const handleSelectedItem = (favItem, str) => {
+		const favItemList = [...favItems];
+		if (str === 'add') {
+			favItemList.push(favItem);
+		} else {
+			// Remove from wishlist
+		}
+		console.log('App favItemList : ', favItemList);
 		setFavItems(favItemList);
 	};
 
@@ -62,44 +69,46 @@ function App() {
 	console.log('favItems : ', favItems);
 
 	return (
-		<Router>
-			<div className='App'></div>
-			<Nav />
-			<main>
-				<Switch>
-					<Route
-						path='/'
-						exact={true}
-						render={(routerProps) => {
-							return (
-								<>
-									<SearchCriteria
-										searchCriteria={searchCriteria}
-										handleSearchCriteria={handleSearchCriteria}
-										routerProps={routerProps}
-									/>
-									<Sidebar
-										searchCriteria={searchCriteria}
-										handleSearchCriteria={handleSearchCriteria}
-									/>
-									<ShowItems
-										searchCriteria={searchCriteria}
-										favItems={favItems}
-									/>
-								</>
-							);
-						}}
-					/>
-					<Route path='/mywishlist' exact={true}>
-						<MyWishlist />
-					</Route>
-					<Route path='/resources' exact={true}>
-						<Resources />
-					</Route>
-					<Redirect to='/' />
-				</Switch>
-			</main>
-		</Router>
+		<appContext.Provider value={{ handleSelectedItem }}>
+			<Router>
+				<div className='App'></div>
+				<Nav />
+				<main>
+					<Switch>
+						<Route
+							path='/'
+							exact={true}
+							render={(routerProps) => {
+								return (
+									<>
+										<SearchCriteria
+											searchCriteria={searchCriteria}
+											handleSearchCriteria={handleSearchCriteria}
+											routerProps={routerProps}
+										/>
+										<Sidebar
+											searchCriteria={searchCriteria}
+											handleSearchCriteria={handleSearchCriteria}
+										/>
+										<ShowItems
+											searchCriteria={searchCriteria}
+											favItems={favItems}
+										/>
+									</>
+								);
+							}}
+						/>
+						<Route path='/mywishlist' exact={true}>
+							<MyWishlist />
+						</Route>
+						<Route path='/resources' exact={true}>
+							<Resources />
+						</Route>
+						<Redirect to='/' />
+					</Switch>
+				</main>
+			</Router>
+		</appContext.Provider>
 	);
 }
 
