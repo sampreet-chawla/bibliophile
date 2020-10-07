@@ -51,6 +51,18 @@ const ShowItem = (props) => {
 				? itemDetails.imageLinks.thumbnail
 				: defaultThumbnail;
 
+			const addButtonJSX =
+				props.from === 'showItems' ? (
+					<button
+						className='btn add-to-wishlist'
+						value='Add to Wishlist'
+						onClick={() => appCtx.handleSelectedItem(item, 'add')}>
+						Add to Wishlist
+					</button>
+				) : (
+					''
+				);
+
 			return (
 				<div className='show-item'>
 					<div>
@@ -72,12 +84,7 @@ const ShowItem = (props) => {
 						<p>Publisher: {itemDetails.publisher}</p>
 						<p>Published: {itemDetails.publishedDate}</p>
 						<p>{ratingJSX} </p>
-						<button
-							className='btn add-to-wishlist'
-							value='Add to Wishlist'
-							onClick={() => appCtx.handleSelectedItem(item, 'add')}>
-							Add to Wishlist
-						</button>
+						{addButtonJSX}
 					</div>
 				</div>
 			);

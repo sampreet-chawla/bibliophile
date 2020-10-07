@@ -11,7 +11,7 @@ const Nav = (props) => {
 	return (
 		<nav className='nav-bar'>
 			<h1>
-				bibio<span style={{ color: 'orange' }}>phile</span>
+				biblio<span style={{ color: 'orange' }}>phile</span>
 			</h1>
 			<p>
 				<Link to='/' className='nav-bar menu-item'>

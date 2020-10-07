@@ -1,7 +1,34 @@
 import React from 'react';
 
+import './Resources.css';
+
 const Resources = (props) => {
-	return <h3>Resources Component</h3>;
+	return (
+		<div className='resources'>
+			<h3>Resources</h3>
+			<ul>
+				<li>
+					<a href='https://nickwignall.com/reading-habit/' target='_blank'>
+						19 Powerful Techniques to Build a Reading Habit (2020)
+					</a>
+				</li>
+				<li>
+					<a
+						href='https://www.understood.org/en/school-learning/learning-at-home/encouraging-reading-writing/8-tips-to-help-young-kids-develop-good-reading-habits'
+						target='_blank'>
+						8 Tips to Help Young Kids Develop Good Reading Habits
+					</a>
+				</li>
+				<li>
+					<a
+						href='https://fueled.com/blog/best-apps-for-book-lovers/'
+						target='_blank'>
+						The 9 Best Apps for Book Lovers
+					</a>
+				</li>
+			</ul>
+		</div>
+	);
 };
 
 export default Resources;

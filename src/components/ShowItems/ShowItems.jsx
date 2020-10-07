@@ -90,7 +90,7 @@ const ShowItems = (props) => {
 
 	if (searchedResults.items) {
 		const itemsList = searchedResults.items.map((item, index) => {
-			return <ShowItem item={item} key={index} />;
+			return <ShowItem item={item} key={index} from='showItems' />;
 		});
 		return (
 			<>

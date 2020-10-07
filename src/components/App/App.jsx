@@ -41,13 +41,28 @@ function App() {
 							displayKey: 'Searched by',
 					  });
 				break;
-			case 'genure':
+			case 'genre':
 				setSearchCriteria({
-					key: 'subject',
+					key: 'q=subject:',
 					value: searchText,
-					displayName: 'Genure',
+					displayKey: 'Genre',
 				});
 				break;
+			case 'justForYou':
+				setSearchCriteria({
+					key: 'q=subject:inspirational',
+					value: '',
+					displayKey: 'Just for You',
+				});
+				break;
+			case 'newReleases':
+				setSearchCriteria({
+					key: 'q=subject:fiction',
+					value: '',
+					displayKey: 'New Releases',
+				});
+				break;
+			case 'bestSelling': // Fallback
 			default:
 				setSearchCriteria(defaultSearchCriteria);
 				break;
@@ -80,27 +95,33 @@ function App() {
 							exact={true}
 							render={(routerProps) => {
 								return (
-									<>
-										<SearchCriteria
-											searchCriteria={searchCriteria}
-											handleSearchCriteria={handleSearchCriteria}
-											routerProps={routerProps}
-										/>
-										<Sidebar
-											searchCriteria={searchCriteria}
-											handleSearchCriteria={handleSearchCriteria}
-										/>
-										<ShowItems
-											searchCriteria={searchCriteria}
-											favItems={favItems}
-										/>
-									</>
+									<div class='search-container'>
+										<aside className='sidebar'>
+											<Sidebar
+												searchCriteria={searchCriteria}
+												handleSearchCriteria={handleSearchCriteria}
+											/>
+										</aside>
+										<section className='search-section'>
+											<SearchCriteria
+												searchCriteria={searchCriteria}
+												handleSearchCriteria={handleSearchCriteria}
+												routerProps={routerProps}
+											/>
+											<ShowItems
+												searchCriteria={searchCriteria}
+												favItems={favItems}
+											/>
+										</section>
+									</div>
 								);
 							}}
 						/>
-						<Route path='/mywishlist' exact={true}>
-							<MyWishlist />
-						</Route>
+						<Route
+							path='/mywishlist'
+							exact={true}
+							render={(routerProps) => <MyWishlist favItems={favItems} />}
+						/>
 						<Route path='/resources' exact={true}>
 							<Resources />
 						</Route>

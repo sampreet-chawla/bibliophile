@@ -8,7 +8,8 @@ const SearchCriteria = (props) => {
 		setSearchText(event.target.value);
 	};
 
-	const handleClick = () => {
+	const handleClick = (event) => {
+		//event.preventDefault();
 		console.log('searchText : ', searchText);
 		props.handleSearchCriteria('searchText', searchText);
 	};

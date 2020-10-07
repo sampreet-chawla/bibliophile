@@ -1,0 +1,27 @@
+@media (min-width: 1024px) {
+	.sidebar-special,
+	.sidebar-genre {
+		display: grid;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.sidebar-genre {
+		padding-top: 20px;
+	}
+
+	.sidebar-special button,
+	.sidebar-genre button {
+		width: 150px;
+		padding: 10px;
+		border-radius: 10px;
+		font-family: var(--button-font);
+		background-color: yellowgreen;
+		margin: 10px;
+	}
+
+	.sidebar-container button:hover,
+	.sidebar-genre button:hover {
+		background-color: 📗;
+	}
+}
