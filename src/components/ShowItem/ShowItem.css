@@ -1,11 +1,9 @@
 .show-item {
+	border-top: red;
+	border-width: 5px;
 	display: grid;
 	justify-content: center;
+	align-items: center;
 	padding: 10px;
-}
-
-@media only screen and (min-width: 768px) {
-	.show-item {
-		display: flex;
-	}
+	margin: 10px;
 }

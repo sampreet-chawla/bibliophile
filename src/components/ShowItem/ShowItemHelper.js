@@ -2,30 +2,25 @@ import { FaStart, FaStarO, FaStarHalfO } from 'react-icons/fa';
 
 //////////////////////////////////////////////////////////////////////////////////
 // Function to return a single string with comma separated values from an array
-// Here, this function return an author string from an array of authors.
-export function convertAuthorsArrToStr(authorsArr) {
-	let authorStr = '';
-	if (authorsArr) {
-		if (authorsArr.length > 1) {
-			authorStr = authorsArr.reduce((authorsStr, author) =>
-				authorsStr.concat(author, ', ')
-			);
-			authorStr = authorStr.endsWith(', ')
-				? authorStr.substr(0, authorStr.lastIndexOf(', '))
-				: authorStr;
-		} else if (authorsArr.length === 1) {
-			authorStr = authorsArr[0];
+export function convertArrToStr(arr) {
+	let str = '';
+	if (arr) {
+		if (arr.length > 1) {
+			str = arr.reduce((str, arrValue) => str.concat(arrValue, ', '));
+			str = str.endsWith(', ') ? str.substr(0, str.lastIndexOf(', ')) : str;
+		} else if (arr.length === 1) {
+			str = arr[0];
 		}
 	} else {
-		authorStr = 'Unknown';
+		str = 'Unknown';
 	}
-	return authorStr;
+	return str;
 }
 
-export function trimDescriptionTo500(description) {
+export function trimTo500(description) {
 	if (description) {
 		return description.length > 500
-			? description.substr(0, 500) + ' ...'
+			? description.substr(0, 500) + '...'
 			: description;
 	} else {
 		return 'Not available.';
