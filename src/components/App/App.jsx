@@ -7,7 +7,7 @@ import {
 } from 'react-router-dom';
 import './App.css';
 
-import Nav from '../Nav/Nav.jsx';
+import BiblioNavBar from '../Nav/BiblioNavBar..jsx';
 import SearchCriteria from '../SearchCriteria/SearchCriteria';
 import Sidebar from '../Sidebar/Sidebar';
 import ShowItems from '../ShowItems/ShowItems';
@@ -87,7 +87,7 @@ function App() {
 		<appContext.Provider value={{ handleSelectedItem }}>
 			<Router>
 				<div className='App'></div>
-				<Nav />
+				<BiblioNavBar />
 				<main>
 					<Switch>
 						<Route

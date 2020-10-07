@@ -6,6 +6,10 @@ const Resources = (props) => {
 	return (
 		<div className='resources'>
 			<h3>Resources</h3>
+			<h4>My Project Journey</h4>
+			<p>In search of Books API</p>
+			<p>Deployed by netlify</p>
+			<h4>Apps and Links to support Good Reading Habits</h4>
 			<ul>
 				<li>
 					<a href='https://nickwignall.com/reading-habit/' target='_blank'>

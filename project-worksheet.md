@@ -168,19 +168,19 @@ Based on the initial logic defined in the previous sections try and breakdown th
 
 | Label | Activity                                        | Priority | Estimated Time | Time Invested | Actual Time |
 | ----- | ----------------------------------------------- | :------: | :------------: | :-----------: | :---------: |
-| A     | Find API urls for project                       |    H     |      2hrs      |      hrs      |     hrs     |
-| B     | Create Stateless Components with Router         |    H     |      3hrs      |      hrs      |     hrs     |
-| C     | Create Stateful Components - (Browse)           |    H     |      4hrs      |      hrs      |     hrs     |
+| A     | Find API urls for project                       |    H     |      2hrs      |    2.5hrs     |   2.5hrs    |
+| B     | Create Stateless Components with Router         |    H     |      3hrs      |    1.5hrs     |   1.5hrs    |
+| C     | Create Stateful Components - (Browse)           |    H     |      4hrs      |     6hrs      |    4hrs     |
 | D     | Create Stateful Components - Show Item, Sidebar |    H     |      3hrs      |      hrs      |     hrs     |
-| E     | Create Stateful Components - My Wishlist        |    H     |      3hrs      |      hrs      |     hrs     |
+| E     | Create Stateful Components - My Wishlist        |    H     |      3hrs      |     2hrs      |    2hrs     |
 | F     | Integrate with GB-API (fetch and show items)    |    H     |      2hrs      |      hrs      |     hrs     |
-| G     | Integrate with NYT Books API - Best Selling     |    H     |      2hrs      |      hrs      |     hrs     |
+| G     | Integrate with NYT Books API - Best Selling     |    H     |      2hrs      |    3.5hrs     |    3hrs     |
 | H     | Create Resource Component                       |    H     |      2hrs      |      hrs      |     hrs     |
 | I     | Make own Logo, Icons and Mock Image             |    M     |     1.5hrs     |      hrs      |     hrs     |
-| J     | Create Resource Component                       |    H     |      2hrs      |      hrs      |     hrs     |
+| J     | Create Resource Component                       |    H     |      2hrs      |    0.5hrs     |     hrs     |
 | K     | Basic Nav Nar Functionality                     |    H     |      2hrs      |      hrs      |     hrs     |
 | L     | Mobile First layout using CSS Grid/ Flex / SCSS |    H     |      3hrs      |      hrs      |     hrs     |
-| M     | responsive Design                               |    H     |      4hrs      |      hrs      |     hrs     |
+| M     | Responsive Design                               |    H     |      4hrs      |      hrs      |     hrs     |
 |       | **Total**                                       |          |  **32.5hrs**   |      hrs      |     hrs     |
 
 ### PostMVP
@@ -208,8 +208,8 @@ Use this section to list all supporting libraries and their role in the project 
 
 ## Challenges
 
-- [Importing functions from helpers] - Referred the [Stackflow link](https://stackoverflow.com/questions/38402025/how-to-create-helper-file-full-of-functions-in-react-native)
-- [A Simple JavaScript Technique for Filling Star Ratings] (https://webdesign.tutsplus.com/tutorials/a-simple-javascript-technique-for-filling-star-ratings--cms-29450)
+- Importing functions from helpers - Referred the [Stackflow link](https://stackoverflow.com/questions/38402025/how-to-create-helper-file-full-of-functions-in-react-native)
+- [A Simple JavaScript Technique for Filling Star Ratings](https://webdesign.tutsplus.com/tutorials/a-simple-javascript-technique-for-filling-star-ratings--cms-29450)
 
 ## Code Snippet - TBD
 
@@ -227,6 +227,11 @@ function reverse(string) {
 - Best Selling list would be supported for hard-cover fiction books.
 - Search results maybe restricted to 10-40 pages at a time.
 - New Releases would refer to mock images as there is API supported for it.
+
+## Unresolved Issues
+
+- Was unable to save changes in VSCode while fetching details from api in useEffect, as ESLint was modifying the code. Disabled the ESLint on Joe's suggestion and tested the functionality. Functionality runs with compile time warnings, but was able to go ahead with coding the functionality. - As on 10/6/2020. 11:30pm EST.
+- Submitting a form by pressing enter without a submit button - Found a [solution](https://stackoverflow.com/questions/477691/submitting-a-form-by-pressing-enter-without-a-submit-button) and will try out if the time permits. In current implementation, the search icon needs to be pressed after entering the search text (Title or Author) to fetch the results. - As on 10/7/2020. 2pm EST.
 
 ## Future Releases
 
