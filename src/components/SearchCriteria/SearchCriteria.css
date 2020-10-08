@@ -9,7 +9,7 @@
 }
 
 .div-search-criteria.search-icon {
-	color: black;
+	color: var(--search-icon-color);
 	padding: 10px;
 	width: 1.5em;
 	height: 1.5em;

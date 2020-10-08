@@ -6,6 +6,10 @@
 	--title-font: 'Merriweather', serif;
 	--description-font: 'Roboto', sans-serif;
 	--button-font: 'Roboto', sans-serif;
+	--button-background: yellowgreen;
+	--button-border-color: black;
+	--button-hover-background: #28a857;
+	--search-icon-color: #28a857;
 }
 
 /* Light Theme */
@@ -45,7 +49,7 @@ body {
 }
 
 @media (min-width: 1024px) {
-	.search-container {
+	.browse-container {
 		display: grid;
 		grid-template-columns: 1fr 4fr;
 		grid-template-rows: auto auto;

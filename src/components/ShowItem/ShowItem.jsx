@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import './ShowItem.css';
 import { convertArrToStr, trimTo500 } from './ShowItemHelper';
@@ -11,6 +11,19 @@ const ShowItem = (props) => {
 	//: 'http://books.google.com/books/content?id=Aaug_RnI-xQC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api';
 
 	const appCtx = React.useContext(appContext);
+	const [isFav, setIsFav] = useState(false);
+
+	const toggle = (event) => {
+		if (!isFav) {
+			appCtx.handleSelectedItem(item, 'add');
+			event.target.disabled = true;
+			event.target.innerHTML = 'Remove from Wishlist';
+		} else {
+			// TODO - To be implemented.
+			appCtx.handleSelectedItem(item, 'remove');
+		}
+		setIsFav(!isFav);
+	};
 
 	// React.useEffect(() => {
 	// 	console.log('In ShowItem useEffect');
@@ -39,8 +52,8 @@ const ShowItem = (props) => {
 			const categoryStr = convertArrToStr(itemDetails.categories);
 			const categoryJSX = itemDetails.categories ? <p>{categoryStr}</p> : <></>;
 			const ratingJSX = itemDetails.averageRating
-				? `${itemDetails.averageRating} (${itemDetails.ratingsCount} reviews)`
-				: '(0)';
+				? `Ratings: ${itemDetails.averageRating} (${itemDetails.ratingsCount} reviews)`
+				: 'No ratings available (0)';
 
 			const thumbnail = itemDetails.imageLinks
 				? itemDetails.imageLinks.thumbnail
@@ -48,10 +61,7 @@ const ShowItem = (props) => {
 
 			const addButtonJSX =
 				props.from === 'showItems' ? (
-					<button
-						className='btn add-to-wishlist'
-						value='Add to Wishlist'
-						onClick={() => appCtx.handleSelectedItem(item, 'add')}>
+					<button className='btn add-to-wishlist' value='add' onClick={toggle}>
 						Add to Wishlist
 					</button>
 				) : (

@@ -7,7 +7,7 @@ import {
 } from 'react-router-dom';
 import './App.css';
 
-import BiblioNavBar from '../Nav/BiblioNavBar..jsx';
+import BiblioNavBar from '../Nav/BiblioNavBar.jsx';
 import SearchCriteria from '../SearchCriteria/SearchCriteria';
 import Sidebar from '../Sidebar/Sidebar';
 import ShowItems from '../ShowItems/ShowItems';

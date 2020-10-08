@@ -1,4 +1,4 @@
-import { FaStart, FaStarO, FaStarHalfO } from 'react-icons/fa';
+//import { FaStart, FaStarO, FaStarHalfO } from 'react-icons/fa';
 
 //////////////////////////////////////////////////////////////////////////////////
 // Function to return a single string with comma separated values from an array

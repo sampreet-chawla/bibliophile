@@ -7,3 +7,15 @@
 	padding: 10px;
 	margin: 10px;
 }
+
+.btn.add-to-wishlist {
+	background-color: var(--button-background);
+	border-color: var(--button-border-color);
+	padding: 10px;
+	border-radius: 10px;
+	font-family: var(--button-font);
+}
+
+.btn.add-to-wishlist:hover {
+	background-color: var(--button-hover-background);
+}

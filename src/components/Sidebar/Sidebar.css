@@ -16,12 +16,12 @@
 		padding: 10px;
 		border-radius: 10px;
 		font-family: var(--button-font);
-		background-color: yellowgreen;
-		margin: 10px;
+		background-color: var(--button-background);
+		margin: 8px;
 	}
 
 	.sidebar-special button:hover,
 	.sidebar-genre button:hover {
-		background-color: #28a857;
+		background-color: var(--button-hover-background);
 	}
 }

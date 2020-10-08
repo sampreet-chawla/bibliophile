@@ -9,7 +9,7 @@ const SearchCriteria = (props) => {
 	};
 
 	const handleClick = (event) => {
-		//event.preventDefault();
+		event.preventDefault();
 		console.log('searchText : ', searchText);
 		props.handleSearchCriteria('searchText', searchText);
 	};
@@ -27,12 +27,12 @@ const SearchCriteria = (props) => {
 					className='div-search-criteria search-text'
 					autocomplete='off'
 				/>
-				<a
-					href='#'
+				<button
+					//href=''
 					onClick={handleClick}
 					className='div-search-criteria search-icon'>
 					<FaSearch />
-				</a>
+				</button>
 			</form>
 		</div>
 	);
