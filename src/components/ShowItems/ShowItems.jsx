@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 import ShowItem from '../ShowItem/ShowItem';
 import { FaAngleDoubleRight } from 'react-icons/fa';
+import './ShowItems.css';
 
 const ShowItems = (props) => {
 	const [searchedResults, setSearchedResults] = useState({});
@@ -10,6 +11,9 @@ const ShowItems = (props) => {
 	const searchKey = props.searchCriteria.key;
 	const displaySearchKey = props.searchCriteria.displayKey;
 	const displaySearchValue = props.searchCriteria.value;
+
+	let messageJSX = '';
+	let resultsJSX = '';
 
 	const googleBaseUrl = 'https://www.googleapis.com/books/v1/volumes';
 
@@ -54,10 +58,9 @@ const ShowItems = (props) => {
 		});
 		console.log('bestSellingItems : ', bestSellingItems);
 
-		// Make calls to Google API for other details.
+		// Make calls to Google API with ISBN match for other details.
 		const itemDetailsList = bestSellingItems.map(async (item) => {
 			const searchUrl = `${googleBaseUrl}?q=isbn:${item.isbn_13}`;
-			//console.log('In ShowItems - searchUrl', searchUrl);
 			const res = await fetch(searchUrl);
 			const data = await res.json();
 			//console.log('data', await data);
@@ -88,19 +91,33 @@ const ShowItems = (props) => {
 		makeApiCall();
 	}, [searchCriteria]);
 
-	if (searchedResults.items) {
-		const itemsList = searchedResults.items.map((item, index) => {
-			return <ShowItem item={item} key={index} from='showItems' />;
-		});
-		return (
-			<>
-				<h3>
-					{displaySearchKey} <FaAngleDoubleRight /> {displaySearchValue}
-				</h3>
-				{itemsList}
-			</>
-		);
-	} else return <h3>No Results Found</h3>;
+	if (searchedResults.totalItems) {
+		if (searchedResults.totalItems === 0) {
+			messageJSX = <h4 className='search-message'>No results found.</h4>;
+		} else if (searchedResults.items) {
+			const itemsList = searchedResults.items.map((item, index) => {
+				return <ShowItem item={item} key={index} from='showItems' />;
+			});
+
+			resultsJSX = (
+				<>
+					<h3>
+						{displaySearchKey} <FaAngleDoubleRight /> {displaySearchValue}
+					</h3>
+					{itemsList}
+				</>
+			);
+		}
+	} else {
+		messageJSX = <h4 className='search-message'>Loading...</h4>;
+	}
+
+	return (
+		<div className='div-search-results'>
+			{messageJSX}
+			{resultsJSX}
+		</div>
+	);
 };
 
 export default ShowItems;

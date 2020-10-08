@@ -6,10 +6,13 @@
 	--title-font: 'Merriweather', serif;
 	--description-font: 'Roboto', sans-serif;
 	--button-font: 'Roboto', sans-serif;
+
+	/* For Light Theme */
 	--button-background: yellowgreen;
 	--button-border-color: black;
 	--button-hover-background: #28a857;
 	--search-icon-color: #28a857;
+	--heading-color: #28a857;
 }
 
 /* Light Theme */

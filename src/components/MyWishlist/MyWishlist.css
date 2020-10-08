@@ -1,3 +1,17 @@
 .mywishlist-container {
 	padding: 100px 40px 40px 40px;
 }
+
+.mywishlist-message {
+	padding: 20px;
+	color: var(--heading-color);
+}
+
+.browse-link {
+	font-weight: 800;
+	text-decoration: underline;
+	color: var(--heading-color);
+}
+.browse-link:hover {
+	font-size: 1.2em;
+}
