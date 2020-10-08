@@ -35,8 +35,8 @@ body {
 	font-family: var(--main-font);
 }
 
-.search-container {
-	padding-top: 100px;
+.browse-container {
+	padding: 100px 40px 40px 40px;
 	display: grid;
 	grid-template-areas: 'search-section';
 }

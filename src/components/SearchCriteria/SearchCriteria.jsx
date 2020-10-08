@@ -16,6 +16,8 @@ const SearchCriteria = (props) => {
 
 	return (
 		<div className='div-search-criteria'>
+			<h3>Browse</h3>
+			<p>Hi Bibliophile, please find my books...</p>
 			<form>
 				<input
 					type='text'
@@ -23,7 +25,7 @@ const SearchCriteria = (props) => {
 					onChange={handleOnChange}
 					placeholder='Search by Title OR Author'
 					className='div-search-criteria search-text'
-					autocomplete="off"
+					autocomplete='off'
 				/>
 				<a
 					href='#'

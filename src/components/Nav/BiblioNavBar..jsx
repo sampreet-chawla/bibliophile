@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 //import { Link } from 'react-router-dom';
 
 /**** REACT BOOTSTRAP NAV-BAR ***/
+// USING REACT ROUTER BOOTSTRAP to wrap <NavLink></NavLink> with <LinkContainer></LinkContainer>
+//  to retain React state - a bug fix as suggested by Alex Merced.
 import { LinkContainer } from 'react-router-bootstrap';
 import {
 	Collapse,
@@ -22,7 +24,6 @@ import './BiblioNavBar.css';
 
 const BiblioNavBar = (props) => {
 	const [isOpen, setIsOpen] = useState(false);
-
 	const toggle = () => setIsOpen(!isOpen);
 
 	return (

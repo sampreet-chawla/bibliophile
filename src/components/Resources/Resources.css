@@ -1,3 +1,13 @@
 .resources-container {
 	padding: 100px 40px 40px 40px;
 }
+
+.resources.article1,
+.resources.article2 {
+	padding: 15px;
+}
+
+.resources.article1 ul li a,
+.resources.article2 ul li a {
+	color: black;
+}
