@@ -9,8 +9,23 @@
 }
 
 .div-search-criteria.search-icon {
+	background-color: transparent;
+	border-color: transparent;
 	color: var(--search-icon-color);
 	padding: 10px;
+	width: 2em;
+	height: 2em;
+	border-radius: 50%;
+}
+
+#search-icon {
 	width: 1.5em;
 	height: 1.5em;
+}
+
+@media (min-width: 1024px) {
+	#search-icon {
+		width: 2em;
+		height: 2em;
+	}
 }

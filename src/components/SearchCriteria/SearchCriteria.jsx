@@ -31,7 +31,7 @@ const SearchCriteria = (props) => {
 					//href=''
 					onClick={handleClick}
 					className='div-search-criteria search-icon'>
-					<FaSearch />
+					<FaSearch id='search-icon' />
 				</button>
 			</form>
 		</div>
