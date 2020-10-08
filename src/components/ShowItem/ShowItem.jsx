@@ -7,8 +7,8 @@ import { appContext } from '../App/App.jsx';
 const ShowItem = (props) => {
 	const item = props.item;
 	const defaultThumbnail =
-		'https://res.cloudinary.com/dreamer123/image/upload/v1602029515/Sampreet-SEIR-831-unit2/image-unavailable-thumbnail_jnjdhg.gif';
-	//: 'http://books.google.com/books/content?id=Aaug_RnI-xQC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api';
+		'https://res.cloudinary.com/dreamer123/image/upload/v1602199643/Sampreet-SEIR-831-unit2/image-not-available-thumbnail_ydl8en.png';
+	// 'https://res.cloudinary.com/dreamer123/image/upload/v1602029515/Sampreet-SEIR-831-unit2/image-unavailable-thumbnail_jnjdhg.gif';
 
 	const appCtx = React.useContext(appContext);
 	const [isFav, setIsFav] = useState(false);
@@ -93,38 +93,6 @@ const ShowItem = (props) => {
 					</div>
 				</div>
 			);
-
-			// IF BOOK DETAILS ARE AVAILABLE FROM NYT BOOK API
-			// REFER SAMPLE AT - https://api.nytimes.com/svc/books/v3/lists.json?list-name=hardcover-fiction&api-key=qhstV6EWd3jJ6cmGxXP5ZA7UwEgaFdRf
-			// } else {
-			// 	return (
-			// 		<div className='show-item'>
-			// 			<hr />
-			// 			<div>
-			// 				<a
-			// 					href={item.amazon_product_url}
-			// 					target='_blank'
-			// 					rel='noopener noreferrer'>
-			// 					<img src={defaultThumbnail} alt={item.book_details[0].title} />
-			// 				</a>
-			// 			</div>
-			// 			<div>
-			// 				<h3>{item.book_details[0].title}</h3>
-			// 				<h5>by {item.book_details[0].author}</h5>
-			// 				{bestSellerDateJSX}
-			// 				<p>ISBN:{item.isbn_13}</p>
-			// 				<p>{trimDescriptionTo500(item.book_details[0].description)}</p>
-			// 				<p>Publisher:{item.book_details[0].publisher}</p>
-			// 				<p>Published: {item.published_date}</p>
-			// 				<button
-			// 					className='btn add-to-wishlist'
-			// 					value='Add to Wishlist'
-			// 					onClick={() => appCtx.handleSelectedItem(item, 'add')}>
-			// 					Add to Wishlist
-			// 				</button>
-			// 			</div>
-			// 		</div>
-			// 	);
 		}
 	} else return <></>;
 };
