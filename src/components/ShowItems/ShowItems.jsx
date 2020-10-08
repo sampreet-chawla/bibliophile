@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
 import ShowItem from '../ShowItem/ShowItem';
-import { FaAngleDoubleRight } from 'react-icons/fa';
+//import { FaAngleDoubleRight } from 'react-icons/fa';
 import './ShowItems.css';
 
 const ShowItems = (props) => {
@@ -12,41 +12,25 @@ const ShowItems = (props) => {
 	const displaySearchKey = props.searchCriteria.displayKey;
 	const displaySearchValue = props.searchCriteria.value;
 
-	let messageJSX = '';
-	let resultsJSX = '';
-
-	const googleBaseUrl = 'https://www.googleapis.com/books/v1/volumes';
-
-	console.log('In Show Items,  props.searchCriteria', props.searchCriteria);
-	if (searchCriteria !== props.searchCriteria)
+	if (searchCriteria !== props.searchCriteria) {
 		setSearchCriteria(props.searchCriteria);
-	console.log(
-		'In Show Items,  searchCriteria',
-		searchCriteria === props.searchCriteria
-	);
+	}
 
 	const makeGoogleApiCall = async () => {
-		// Make Google API call
+		// Make Google API call for the search criteria
+		const googleBaseUrl = 'https://www.googleapis.com/books/v1/volumes';
 		const searchUrl = `${googleBaseUrl}?${searchKey}=${displaySearchValue}`;
-		console.log('In ShowItems - searchUrl', searchUrl);
 		const res = await fetch(searchUrl);
 		const data = await res.json();
-		console.log('data', data);
 		setSearchedResults({ totalItems: data.totalItems, items: data.items });
 	};
 
 	const makeBestSellingApiCalls = async () => {
-		// console.log(
-		// 	'process.env.NYT_BOOKS_API_KEY : ',
-		// 	process.env.NYT_BOOKS_API_KEY
-		// );
-
 		// For Best Selling Books as of Current Date, use NYT Book API
 		const nytBooksUrl =
 			'https://api.nytimes.com/svc/books/v3/lists.json?list-name=hardcover-fiction&api-key=qhstV6EWd3jJ6cmGxXP5ZA7UwEgaFdRf';
 		const res = await fetch(nytBooksUrl);
 		const data = await res.json();
-		console.log('nyt books api data - ', data.results);
 		const bestSellingItems = data.results.map((item, index) => {
 			return {
 				rank: item.rank,
@@ -56,22 +40,23 @@ const ShowItems = (props) => {
 				bestsellers_date: item.bestsellers_date,
 			};
 		});
-		console.log('bestSellingItems : ', bestSellingItems);
 
-		// Make calls to Google API with ISBN match for other details.
+		// Make calls to Google API with ISBN match for extra details.
 		const itemDetailsList = bestSellingItems.map(async (item) => {
+			const googleBaseUrl = 'https://www.googleapis.com/books/v1/volumes';
 			const searchUrl = `${googleBaseUrl}?q=isbn:${item.isbn_13}`;
 			const res = await fetch(searchUrl);
 			const data = await res.json();
-			//console.log('data', await data);
-			let volumeInfoData = {};
+			let volumeInfoData = null;
 			if (data.items) {
 				volumeInfoData = data.items[0].volumeInfo;
 			}
-			return { ...item, volumeInfo: volumeInfoData };
+			return {
+				...item,
+				volumeInfo: volumeInfoData,
+			};
 		});
 		Promise.all(itemDetailsList).then((data) => {
-			//console.log('In ShowItems - bestSellingItemsWithDetails', data);
 			setSearchedResults({
 				totalItems: data.length,
 				items: data,
@@ -81,7 +66,6 @@ const ShowItems = (props) => {
 
 	useEffect(() => {
 		const makeApiCall = () => {
-			console.log('In Show Items: ', searchKey);
 			if (searchKey === 'bestSelling') {
 				makeBestSellingApiCalls();
 			} else {
@@ -91,33 +75,26 @@ const ShowItems = (props) => {
 		makeApiCall();
 	}, [searchCriteria]);
 
-	if (searchedResults.totalItems) {
-		if (searchedResults.totalItems === 0) {
-			messageJSX = <h4 className='search-message'>No results found.</h4>;
-		} else if (searchedResults.items) {
-			const itemsList = searchedResults.items.map((item, index) => {
+	if (searchedResults.items) {
+		const itemsList = searchedResults.items.map((item, index) => {
+			// Display only when Google API data is available
+			if (item.volumeInfo) {
 				return <ShowItem item={item} key={index} from='showItems' />;
-			});
-
-			resultsJSX = (
-				<>
-					<h3>
-						{displaySearchKey} <FaAngleDoubleRight /> {displaySearchValue}
-					</h3>
-					{itemsList}
-				</>
-			);
-		}
+			} else {
+				return '';
+			}
+		});
+		return (
+			<div className='div-search-results'>
+				<h3>
+					{displaySearchKey}: {displaySearchValue}
+				</h3>
+				{itemsList}
+			</div>
+		);
 	} else {
-		messageJSX = <h4 className='search-message'>Loading...</h4>;
+		return <h4 className='search-message'>No match found.</h4>;
 	}
-
-	return (
-		<div className='div-search-results'>
-			{messageJSX}
-			{resultsJSX}
-		</div>
-	);
 };
 
 export default ShowItems;

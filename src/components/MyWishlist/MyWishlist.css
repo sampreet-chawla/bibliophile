@@ -9,9 +9,9 @@
 
 .browse-link {
 	font-weight: 800;
-	text-decoration: underline;
 	color: var(--heading-color);
 }
 .browse-link:hover {
-	font-size: 1.2em;
+	text-decoration: underline;
+	color: var(--heading-color);
 }
