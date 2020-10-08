@@ -6,7 +6,7 @@ const Resources = (props) => {
 	return (
 		<div className='resources-container'>
 			<h3>Resources</h3>
-			<h5>My Project Journey</h5>
+			<h5>My Project Journey - Upcoming...</h5>
 			<p>In search of Books API</p>
 			<p>Deployed by netlify</p>
 			<h5>Apps and Links to support Good Reading Habits</h5>
