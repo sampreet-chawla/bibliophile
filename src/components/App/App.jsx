@@ -95,7 +95,7 @@ function App() {
 							exact={true}
 							render={(routerProps) => {
 								return (
-									<div class='search-container'>
+									<div className='search-container'>
 										<aside className='sidebar'>
 											<Sidebar
 												searchCriteria={searchCriteria}

@@ -20,8 +20,8 @@
 		margin: 10px;
 	}
 
-	.sidebar-container button:hover,
+	.sidebar-special button:hover,
 	.sidebar-genre button:hover {
-		background-color: 📗;
+		background-color: #28a857;
 	}
 }

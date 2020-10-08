@@ -227,11 +227,25 @@ function reverse(string) {
 - Best Selling list would be supported for hard-cover fiction books.
 - Search results maybe restricted to 10-40 pages at a time.
 - New Releases would refer to mock images as there is API supported for it.
+- Use of [reactstrap Navbar](https://reactstrap.github.io/components/navbar/) is causing loss of React state values, hence any items added in wishlist in 'Browse' webpage is lost while moving to other pages like 'My Wishlist' and 'Resources'. An error is also raised that 'Collapse' component used in [reactstrap Navbar](https://reactstrap.github.io/components/navbar/) is using a Deprecated API which is not allowed by the strict mode of [create-react-app](https://reactjs.org/docs/create-a-new-react-app.html). Planning to use normal navbar instead.
+
+## Challenges
+
+- Calling the Promises.all with fetch(url) inside with Array.map() - Alex suggested the use of Promises.all while helping Riana. I could use it in my code. Thanks Alex!
+- Dependencies in useEffect were getting autofilled by ESLint and giving 'Object is not a Function' error at compile time. Joe suggested disabling the ESLint, the code gives compile time warning but the runs well. Keeping it that way.
+- reactstrap Navbar is giving Deprecated API error for its internal use of Collapse component, which is not supported by StrictMode of create-react-app. The code seems to run well but has the side-effect of losing state values from one page to another. Will have to try Materialize Navbar if time permits.
+- Searching the right use of API and integrating with another API results was time-taking. In my bibliophile project, the combining of results of NYT Book API with Google Books API for Best Sellers list was challenging and time-taking. Still have minor issues which needs to be fixed based on available time.
+- Need to work on developing skills in Page layout and CSS styling for Front-end development. Getting the mock screens makes life so easier.
+
+## Learnings
+
+- Learnt a lot on developing React application using React components, State, Props, Hooks, React Icons and Emojis, reactstrap, etc. Resources used - API docs, Google, Stack Overflow, Asking for help from instructors and peers.
 
 ## Unresolved Issues
 
 - Was unable to save changes in VSCode while fetching details from api in useEffect, as ESLint was modifying the code. Disabled the ESLint on Joe's suggestion and tested the functionality. Functionality runs with compile time warnings, but was able to go ahead with coding the functionality. - As on 10/6/2020. 11:30pm EST.
 - Submitting a form by pressing enter without a submit button - Found a [solution](https://stackoverflow.com/questions/477691/submitting-a-form-by-pressing-enter-without-a-submit-button) and will try out if the time permits. In current implementation, the search icon needs to be pressed after entering the search text (Title or Author) to fetch the results. - As on 10/7/2020. 2pm EST.
+- Emojis are used directly in this project, and give compile time warnings. We need to use [react-emoji - npm](https://www.npmjs.com/package/react-emoji) similar to successful use of [React Icons](https://www.npmjs.com/package/react-icons). Can also use tiny library of React Emojis - [react-emojione](https://reactjsexample.com/super-minimal-emoji-rendering-utility-for-react/) - As on 10/7/2020, 9PM EST
 
 ## Future Releases
 

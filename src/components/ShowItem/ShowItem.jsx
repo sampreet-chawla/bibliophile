@@ -36,13 +36,8 @@ const ShowItem = (props) => {
 		// SAMPLE API RESPONSE - https://www.googleapis.com/books/v1/volumes?q=isbn:9780525954989
 		if (itemDetails) {
 			const authorStr = convertArrToStr(itemDetails.authors);
-			console.log('itemDetails.categories', itemDetails.categories);
 			const categoryStr = convertArrToStr(itemDetails.categories);
-			const categoryJSX = itemDetails.categories ? (
-				<p>convertArrToStr(itemDetails.categories)</p>
-			) : (
-				<></>
-			);
+			const categoryJSX = itemDetails.categories ? <p>{categoryStr}</p> : <></>;
 			const ratingJSX = itemDetails.averageRating
 				? `${itemDetails.averageRating} (${itemDetails.ratingsCount} reviews)`
 				: '(0)';

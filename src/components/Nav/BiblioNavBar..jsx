@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 //import { Link } from 'react-router-dom';
+
+/**** REACT NAV-BAR ***/
 import {
 	Collapse,
 	Navbar,
@@ -24,7 +26,7 @@ const BiblioNavBar = (props) => {
 
 	return (
 		<div>
-			<Navbar color='black' light fixed expand='md'>
+			<Navbar color='success' dark fixed='top' expand='md'>
 				<NavbarBrand href='/'>
 					biblio<span style={{ color: 'orange' }}>phile</span>
 				</NavbarBrand>
@@ -47,6 +49,7 @@ const BiblioNavBar = (props) => {
 		</div>
 	);
 
+	/**** REGULAR NAV-BAR ***/
 	// return (
 	// 	<nav className='nav-bar'>
 	// 		<h1>
