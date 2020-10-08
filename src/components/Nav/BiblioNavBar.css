@@ -1,5 +1,5 @@
 /**** REACT NAV-BAR ***/
-
+/* 
 .navbar-dark .navbar-toggler {
 	border-color: white !important;
 	border-width: thin;
@@ -11,10 +11,10 @@
 
 .navbar-dark .navbar-nav .nav-link:hover {
 	text-decoration: underline;
-}
+} */
 
 /**** REGULAR NAV-BAR ***/
-/* .nav-bar {
+.nav-bar {
 	display: flex;
 	background: black;
 	color: white;
@@ -26,4 +26,4 @@
 	font-size: 15px;
 	font-weight: 400;
 	line-height: 1em;
-} */
+}
