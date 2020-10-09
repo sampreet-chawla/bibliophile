@@ -13,7 +13,7 @@ const MyWishlist = (props) => {
 	if (props.favItems.length === 0) {
 		message = (
 			<div className='mywishlist-message'>
-				No books in the list yet. Please try {' '}
+				No books in the list yet. Please try{' '}
 				<Link to='/' className='browse-link'>
 					Browse
 				</Link>
@@ -27,9 +27,11 @@ const MyWishlist = (props) => {
 
 	return (
 		<div className='mywishlist-container'>
-			<h3>My Wishlist </h3>
-			{message}
-			{showItems}
+			<div>
+				<h3>My Wishlist </h3>
+				{message}
+			</div>
+			<div className='mywishlist-contents'>{showItems}</div>
 		</div>
 	);
 };

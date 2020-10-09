@@ -89,7 +89,7 @@ const ShowItems = (props) => {
 				<h3>
 					{displaySearchKey}: {displaySearchValue}
 				</h3>
-				{itemsList}
+				<div className='div-search-results contents'>{itemsList}</div>
 			</div>
 		);
 	} else {

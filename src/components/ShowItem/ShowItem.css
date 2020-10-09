@@ -57,8 +57,42 @@
 }
 
 @media (min-width: 768px) {
+	.show-item-container {
+		grid-template-columns: 1fr 1fr;
+		grid-template-areas:
+			'image title'
+			'description description'
+			'publisher publisher'
+			'links links';
+	}
+
+	.image {
+		grid-area: image;
+	}
+
+	.title-info {
+		grid-area: title;
+		text-align: left;
+	}
+
+	.description {
+		padding-top: 10px;
+		margin-bottom: 5px;
+		grid-area: description;
+	}
+
+	.publisher {
+		grid-area: publisher;
+		padding: 5px;
+	}
+
+	.links {
+		grid-area: links;
+	}
+
 	#desc {
 		display: block;
+		margin-bottom: 0;
 	}
 
 	#preview {

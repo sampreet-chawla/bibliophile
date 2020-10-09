@@ -15,3 +15,10 @@
 	text-decoration: underline;
 	color: var(--heading-color);
 }
+
+@media (min-width: 768px) {
+	.mywishlist-contents {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+	}
+}

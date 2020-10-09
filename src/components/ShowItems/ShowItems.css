@@ -5,3 +5,10 @@
 .search-message {
 	color: var(--heading-color);
 }
+
+@media (min-width: 768px) {
+	.div-search-results.contents {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+	}
+}
