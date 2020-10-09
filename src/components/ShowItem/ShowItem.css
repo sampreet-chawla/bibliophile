@@ -1,21 +1,67 @@
-.show-item {
-	border-top: red;
-	border-width: 5px;
+.show-item-container {
+	border: 1px solid green;
+	box-shadow: 2px 2px 3px 3px rgba(0, 0, 0, 0.4);
 	display: grid;
 	justify-content: center;
 	align-items: center;
 	padding: 10px;
 	margin: 10px;
+	margin-top: 20px;
+	text-align: center;
+}
+
+.extra-info {
+	color: var(--extra-color);
+	font-size: 15px;
+	padding: 0;
+	margin: 0;
+}
+.extra-info.bold {
+	font-weight: 600;
 }
 
 .btn.add-to-wishlist {
 	background-color: var(--button-background);
-	border-color: var(--button-border-color);
-	padding: 10px;
+	/* border-color: var(--button-border-color); */
+	padding: 10px 8px;
 	border-radius: 10px;
 	font-family: var(--button-font);
 }
 
 .btn.add-to-wishlist:hover {
 	background-color: var(--button-hover-background);
+}
+
+#preview {
+	text-decoration: none;
+	background-color: var(--button-background);
+	border-color: 1px solid var(--button-border-color);
+	padding: 12px 15px;
+	border-radius: 10px;
+	font-family: var(--button-font);
+	color: var(--button-border-color);
+	margin-left: 30px;
+	display: inline-block;
+}
+
+.show-item-container.links {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: center;
+	padding: 0px 15px;
+	margin: 10px;
+}
+
+#desc {
+	display: none;
+}
+
+@media (min-width: 768px) {
+	#desc {
+		display: block;
+	}
+
+	#preview {
+		padding: 12px 32px;
+	}
 }

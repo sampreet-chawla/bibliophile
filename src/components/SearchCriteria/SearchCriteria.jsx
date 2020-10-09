@@ -25,7 +25,7 @@ const SearchCriteria = (props) => {
 					onChange={handleOnChange}
 					placeholder='Search by Title OR Author'
 					className='div-search-criteria search-text'
-					autocomplete='off'
+					autoComplete='off'
 				/>
 				<button
 					//href=''

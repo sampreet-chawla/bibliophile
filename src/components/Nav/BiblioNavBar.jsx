@@ -28,13 +28,18 @@ const BiblioNavBar = (props) => {
 
 	return (
 		<div>
-			<Navbar color='success' dark fixed='top' expand='md'>
+			<Navbar
+				color='success'
+				dark
+				fixed='top'
+				expand='md'
+				collapseOnSelect='true'>
 				<NavbarBrand href='/'>
 					biblio<span style={{ color: 'orange' }}>phile</span>
 				</NavbarBrand>
 				<NavbarToggler onClick={toggle} />
 				<Collapse isOpen={isOpen} navbar>
-					<Nav className='mr-auto' navbar pullRight>
+					<Nav className='mr-auto' navbar>
 						<NavItem>
 							{/* <NavLink href='/'>Browse</NavLink> */}
 							<LinkContainer to='/'>

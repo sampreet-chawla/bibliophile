@@ -1,23 +1,24 @@
 import React, { useState } from 'react';
 
 import './ShowItem.css';
-import { convertArrToStr, trimTo500 } from './ShowItemHelper';
+import { convertArrToStr, trimToLen } from './ShowItemHelper';
 import { appContext } from '../App/App.jsx';
 
 const ShowItem = (props) => {
 	const item = props.item;
 	const defaultThumbnail =
 		'https://res.cloudinary.com/dreamer123/image/upload/v1602199643/Sampreet-SEIR-831-unit2/image-not-available-thumbnail_ydl8en.png';
-	// 'https://res.cloudinary.com/dreamer123/image/upload/v1602029515/Sampreet-SEIR-831-unit2/image-unavailable-thumbnail_jnjdhg.gif';
 
 	const appCtx = React.useContext(appContext);
 	const [isFav, setIsFav] = useState(false);
 
-	const toggle = (event) => {
+	const [isShowDescFull, setShowDescFull] = useState(false);
+
+	const toggleAddToWishlist = (event) => {
 		if (!isFav) {
 			appCtx.handleSelectedItem(item, 'add');
 			event.target.disabled = true;
-			event.target.innerHTML = 'Remove from Wishlist';
+			event.target.innerHTML = 'Added';
 		} else {
 			// TODO - To be implemented.
 			appCtx.handleSelectedItem(item, 'remove');
@@ -32,26 +33,14 @@ const ShowItem = (props) => {
 	if (item) {
 		const itemDetails = item.volumeInfo;
 
-		// IF BEST SELLER INFORMATION IS AVAILABLE.
-		let bestSellerDateJSX = <></>;
-		if (item.rank) {
-			bestSellerDateJSX = (
-				<>
-					<p>Rank: {item.rank}</p>
-					<p>Rank Last Week: {item.rank_last_week}</p>
-					<p>Weeks on list: {item.weeks_on_list}</p>
-					<p>Best Seller's Date: {item.bestsellers_date}</p>
-				</>
-			);
-		}
-
 		// IF BOOK DETAILS ARE AVAILABLE FROM GOOGLE BOOK API
 		// SAMPLE API RESPONSE - https://www.googleapis.com/books/v1/volumes?q=isbn:9780525954989
 		if (itemDetails) {
 			const authorStr = convertArrToStr(itemDetails.authors);
-			const categoryStr = convertArrToStr(itemDetails.categories);
-			const categoryJSX = itemDetails.categories ? <p>{categoryStr}</p> : <></>;
-			const ratingJSX = itemDetails.averageRating
+			const categoryStr = itemDetails.categories
+				? convertArrToStr(itemDetails.categories)
+				: '';
+			const ratingStr = itemDetails.averageRating
 				? `Ratings: ${itemDetails.averageRating} (${itemDetails.ratingsCount} reviews)`
 				: 'No ratings available (0)';
 
@@ -61,16 +50,44 @@ const ShowItem = (props) => {
 
 			const addButtonJSX =
 				props.from === 'showItems' ? (
-					<button className='btn add-to-wishlist' value='add' onClick={toggle}>
+					<button
+						className='btn add-to-wishlist'
+						value='add'
+						onClick={toggleAddToWishlist}>
 						Add to Wishlist
 					</button>
 				) : (
 					''
 				);
 
+			// IF BEST SELLER INFORMATION IS AVAILABLE.
+			let bestSellerDateJSX = <></>;
+			if (item.rank) {
+				bestSellerDateJSX = (
+					<div className='best-seller-div'>
+						<p className='extra-info'>Rank: {item.rank}</p>
+						<p className='extra-info'>Rank Last Week: {item.rank_last_week}</p>
+						<p className='extra-info'>Weeks on list: {item.weeks_on_list}</p>
+						<p className='extra-info'>
+							Best Seller's Date: {item.bestsellers_date}
+						</p>
+					</div>
+				);
+			}
+
+			const toggleShowFullDesc = () => {
+				const desc = document.getElementById('desc');
+				if (isShowDescFull) {
+					desc.innerHTML = trimToLen(itemDetails.description, 200);
+				} else {
+					desc.innerHTML = itemDetails.description;
+				}
+				setShowDescFull(!isShowDescFull);
+			};
+
 			return (
-				<div className='show-item'>
-					<div>
+				<div className='show-item-container'>
+					<div className='image'>
 						<a
 							href={itemDetails.previewLink}
 							target='_blank'
@@ -78,18 +95,33 @@ const ShowItem = (props) => {
 							<img src={thumbnail} alt={itemDetails.title} />
 						</a>
 					</div>
-					<div>
-						<h3>{itemDetails.title}</h3>
-						<h5>by {authorStr}</h5>
+					<div className='title-info'>
+						<h4>{itemDetails.title}</h4>
+						<h6>by {authorStr}</h6>
+						<p className='extra-info bold'>{ratingStr} </p>
+						<p className='extra-info bold'>{categoryStr} </p>
 						{bestSellerDateJSX}
-						{categoryJSX}
-						{/* <p>ISBN: {itemDetails.industryIdentifiers[0].identifier}</p> */}
 
-						<p>{trimTo500(itemDetails.description)}</p>
-						<p>Publisher: {itemDetails.publisher}</p>
-						<p>Published: {itemDetails.publishedDate}</p>
-						<p>{ratingJSX} </p>
+						{/* <p>ISBN: {itemDetails.industryIdentifiers[0].identifier}</p> */}
+					</div>
+					<div className='description' onClick={toggleShowFullDesc}>
+						<p id='desc'>{trimToLen(itemDetails.description, 200)}</p>
+					</div>
+					<div className='publisher'>
+						<p className='extra-info'>Publisher: {itemDetails.publisher}</p>
+						<p className='extra-info'>
+							Published In: {itemDetails.publishedDate}
+						</p>
+					</div>
+					<div className='links'>
 						{addButtonJSX}
+						<a
+							id='preview'
+							href={itemDetails.previewLink}
+							target='_blank'
+							rel='noopener noreferrer'>
+							Preview
+						</a>
 					</div>
 				</div>
 			);
