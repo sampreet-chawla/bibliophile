@@ -1,6 +1,10 @@
 .div-search-criteria {
 	padding: 0 15px 15px 0px;
 }
+.div-search-criteria .div-header {
+	display: flex;
+	justify-content: space-between;
+}
 
 .div-search-criteria.search-text {
 	width: 80%;
@@ -21,6 +25,18 @@
 #search-icon {
 	width: 1.5em;
 	height: 1.5em;
+}
+
+#btn-best-selling {
+	width: 150px;
+	padding: 10px;
+	border-radius: 10px;
+	font-family: var(--button-font);
+	background-color: var(--button-background);
+	margin: 8px;
+}
+#btn-best-selling:hover {
+	background-color: var(--button-hover-background);
 }
 
 @media (min-width: 1024px) {

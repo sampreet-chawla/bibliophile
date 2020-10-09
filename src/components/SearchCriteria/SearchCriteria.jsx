@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './SearchCriteria.css';
 import { FaSearch } from 'react-icons/fa';
+import { FaCertificate } from 'react-icons/fa';
 
 const SearchCriteria = (props) => {
 	const [searchText, setSearchText] = useState('');
@@ -14,9 +15,19 @@ const SearchCriteria = (props) => {
 		setSearchText('');
 	};
 
+	const handleBestSellingClick = (event) => {
+		event.preventDefault();
+		props.handleSearchCriteria('bestSelling', '');
+	};
+
 	return (
 		<div className='div-search-criteria'>
-			<h3>Browse</h3>
+			<div className='div-header'>
+				<h3>Browse</h3>
+				<button id='btn-best-selling' onClick={handleBestSellingClick}>
+					<FaCertificate style={{ color: 'orange' }} />✨ Best Selling
+				</button>
+			</div>
 			<p>Hi Bibliophile, please find me books...</p>
 			<form>
 				<input
