@@ -1,4 +1,5 @@
 # Bibliophile Project Overview
+![Magic with reading a Good Book](http://ghk.h-cdn.co/assets/cm/15/11/54ff9839a81fa-books-rowling-de.jpg) - Image from Good HouseKeeping
 
 ## Project Links
 
@@ -279,3 +280,7 @@ The following code snippet is from ShowItems.jsx. It fetches the book details fr
 - Pagination of Search Results
 - Book rating can be displayed in star format using and existing Javascript / CSS snippet
 - Support for ISBN search and ISBN check digit algorithm
+- Removing of items from wishlist
+- Integrating with Embedded Viewer API for free contents
+- Search for free and paid items.
+- Light and Dark Themes
