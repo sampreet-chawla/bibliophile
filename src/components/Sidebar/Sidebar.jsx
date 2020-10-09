@@ -37,8 +37,8 @@ const Sidebar = (props) => {
 				</button>
 			</div>
 			<div className='sidebar-genre'>
-				<div style={{ textDecoration: 'underline' }}>
-					<h3>Genres</h3>
+				<div className='genre-heading'>
+					<h5>Genres</h5>
 				</div>
 				<button onClick={handleClick} value='fantasy'>
 					💕 Fantasy

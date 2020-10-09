@@ -24,4 +24,9 @@
 	.sidebar-genre button:hover {
 		background-color: var(--button-hover-background);
 	}
+
+	.genre-heading {
+		text-decoration: underline;
+		padding-left: 12px;
+	}
 }
