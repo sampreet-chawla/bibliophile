@@ -75,14 +75,19 @@ const ShowItem = (props) => {
 				);
 			}
 
+			const descLen = itemDetails.description
+				? itemDetails.description.length
+				: 0;
 			const toggleShowFullDesc = () => {
-				const desc = document.getElementById('desc');
-				if (isShowDescFull) {
-					desc.innerHTML = trimToLen(itemDetails.description, 200);
-				} else {
-					desc.innerHTML = itemDetails.description;
+				if (descLen.length > 200) {
+					const desc = document.getElementById('desc');
+					if (isShowDescFull) {
+						desc.innerHTML = trimToLen(itemDetails.description, 200) + 'more';
+					} else {
+						desc.innerHTML = itemDetails.description + ' ...less';
+					}
+					setShowDescFull(!isShowDescFull);
 				}
-				setShowDescFull(!isShowDescFull);
 			};
 
 			return (
@@ -105,7 +110,9 @@ const ShowItem = (props) => {
 						{/* <p>ISBN: {itemDetails.industryIdentifiers[0].identifier}</p> */}
 					</div>
 					<div className='description' onClick={toggleShowFullDesc}>
-						<p id='desc'>{trimToLen(itemDetails.description, 200)}</p>
+						<span id='desc' tooltip='Click on Preview for more' flow='down'>
+							{trimToLen(itemDetails.description, 200)}
+						</span>
 					</div>
 					<div className='publisher'>
 						<p className='extra-info'>Publisher: {itemDetails.publisher}</p>

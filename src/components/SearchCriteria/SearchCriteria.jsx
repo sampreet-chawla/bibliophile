@@ -10,14 +10,14 @@ const SearchCriteria = (props) => {
 
 	const handleClick = (event) => {
 		event.preventDefault();
-		console.log('searchText : ', searchText);
 		props.handleSearchCriteria('searchText', searchText);
+		setSearchText('');
 	};
 
 	return (
 		<div className='div-search-criteria'>
 			<h3>Browse</h3>
-			<p>Hi Bibliophile, please find my books...</p>
+			<p>Hi Bibliophile, please find me books...</p>
 			<form>
 				<input
 					type='text'
