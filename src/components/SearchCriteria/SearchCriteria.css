@@ -4,6 +4,7 @@
 .div-search-criteria .div-header {
 	display: flex;
 	justify-content: space-between;
+	width: auto;
 }
 
 .div-search-criteria.search-text {

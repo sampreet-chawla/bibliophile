@@ -39,17 +39,17 @@ const BiblioNavBar = (props) => {
 				<NavbarToggler onClick={toggle} />
 				<Collapse isOpen={isOpen} navbar>
 					<Nav className='mr-auto' navbar>
-						<NavItem>
+						<NavItem onClick={toggle}>
 							<LinkContainer to='/'>
 								<NavLink>Browse</NavLink>
 							</LinkContainer>
 						</NavItem>
-						<NavItem>
+						<NavItem onClick={toggle}>
 							<LinkContainer to='/mywishlist'>
 								<NavLink>My Wishlist</NavLink>
 							</LinkContainer>
 						</NavItem>
-						<NavItem>
+						<NavItem onClick={toggle}>
 							<LinkContainer to='/resources'>
 								<NavLink>Resources</NavLink>
 							</LinkContainer>
