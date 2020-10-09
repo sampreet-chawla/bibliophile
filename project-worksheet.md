@@ -7,7 +7,7 @@
 
 ## Project Description
 
-Bibliophile is an upcoming "Book Browsing" project to help current and emerging Book Lovers with the following -
+Bibliophile is a "Book Browsing" project as a part of Sampreet Chawla's Unit-2 Project for SEI course at General Assembly. The instension of this project is to help current and emerging Book Lovers with the following -
 
 - Best Seller List
 - Search for the Books by Title / Author / Genre.
