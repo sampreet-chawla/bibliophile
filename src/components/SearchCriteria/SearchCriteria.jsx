@@ -28,7 +28,6 @@ const SearchCriteria = (props) => {
 					autoComplete='off'
 				/>
 				<button
-					//href=''
 					onClick={handleClick}
 					className='div-search-criteria search-icon'>
 					<FaSearch id='search-icon' />

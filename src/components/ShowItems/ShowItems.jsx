@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
 import ShowItem from '../ShowItem/ShowItem';
-//import { FaAngleDoubleRight } from 'react-icons/fa';
 import './ShowItems.css';
 
 const ShowItems = (props) => {

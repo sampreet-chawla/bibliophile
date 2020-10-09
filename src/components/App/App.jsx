@@ -28,9 +28,6 @@ function App() {
 	const [searchCriteria, setSearchCriteria] = useState(defaultSearchCriteria);
 
 	const handleSearchCriteria = (searchKey, searchText) => {
-		console.log(
-			`App handleSearchCriteria - searchkey : ${searchKey}, searchText=${searchText}`
-		);
 		switch (searchKey) {
 			case 'searchText':
 				searchText === null || searchText.trim() === ''
@@ -76,12 +73,8 @@ function App() {
 		} else {
 			// Remove from wishlist
 		}
-		console.log('App favItemList : ', favItemList);
 		setFavItems(favItemList);
 	};
-
-	console.log('searchCriteria : ', searchCriteria);
-	console.log('favItems : ', favItems);
 
 	return (
 		<appContext.Provider value={{ handleSelectedItem }}>

@@ -26,10 +26,6 @@ const ShowItem = (props) => {
 		setIsFav(!isFav);
 	};
 
-	// React.useEffect(() => {
-	// 	console.log('In ShowItem useEffect');
-	// }, []);
-
 	if (item) {
 		const itemDetails = item.volumeInfo;
 

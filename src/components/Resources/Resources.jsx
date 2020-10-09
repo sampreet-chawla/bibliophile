@@ -14,6 +14,18 @@ const Resources = (props) => {
 					<li>📗 Deployed by netlify</li>
 				</ul>
 			</article>
+			<iframe
+				src='https://giphy.com/embed/8dYmJ6Buo3lYY'
+				height='150'
+				frameBorder='0'
+				class='giphy-embed'
+				allowFullScreen></iframe>
+			<p>
+				<a
+					href='https://giphy.com/gifs/baby-story-reading-8dYmJ6Buo3lYY'
+					target='_blank'
+					rel='noopener noreferrer'></a>
+			</p>
 			<article className='resources article2'>
 				<h5>Apps and Links to support Good Reading Habits</h5>
 				<ul>
