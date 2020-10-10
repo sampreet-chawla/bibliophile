@@ -1,5 +1,5 @@
 # Bibliophile Project Overview
-![Book Magic](https://res.cloudinary.com/dreamer123/image/upload/v1602366324/Sampreet-SEIR-831-unit2/book-magic_k114jh.png) 
+![Book Magic](https://res.cloudinary.com/dreamer123/image/upload/v1602366547/Sampreet-SEIR-831-unit2/book-magic-resized_f7gkir.png) 
 
 ## Project Links
 
