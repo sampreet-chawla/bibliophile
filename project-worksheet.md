@@ -1,5 +1,5 @@
 # Bibliophile Project Overview
-<!-- ![Magic with reading a Good Book](http://ghk.h-cdn.co/assets/cm/15/11/54ff9839a81fa-books-rowling-de.jpg) - Image from Good HouseKeeping -->
+![Book Magic](https://res.cloudinary.com/dreamer123/image/upload/v1602366324/Sampreet-SEIR-831-unit2/book-magic_k114jh.png) 
 
 ## Project Links
 
