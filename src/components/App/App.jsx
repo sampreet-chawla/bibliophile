@@ -13,6 +13,7 @@ import Sidebar from '../Sidebar/Sidebar';
 import ShowItems from '../ShowItems/ShowItems';
 import MyWishlist from '../MyWishlist/MyWishlist';
 import Resources from '../Resources/Resources';
+import { FaLinkedin } from 'react-icons/fa';
 
 export const appContext = React.createContext(null);
 
@@ -121,6 +122,16 @@ function App() {
 						<Redirect to='/' />
 					</Switch>
 				</main>
+				<footer>
+					<p>
+						© Sampreet K Chawla -2020-, &nbsp;
+						<a
+							href='https://www.linkedin.com/in/sampreetchawla'
+							target='_blank'>
+							Connect at <FaLinkedin />
+						</a>
+					</p>
+				</footer>
 			</Router>
 		</appContext.Provider>
 	);
