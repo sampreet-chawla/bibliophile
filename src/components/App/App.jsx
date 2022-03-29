@@ -124,7 +124,7 @@ function App() {
 				</main>
 				<footer>
 					<p>
-						© Sampreet K Chawla -2020-, &nbsp;
+						© Sampreet K Chawla -2022-, &nbsp;
 						<a
 							href='https://www.linkedin.com/in/sampreetchawla'
 							target='_blank'>
